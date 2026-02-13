@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watching. Start Earning. | Noah's SMMA Blueprint</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000000;
+            color: #e5e5e5;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fade-in animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 30px 20px 35px;
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%),
+                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+            position: relative;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(59, 130, 246, 0.3) 20%,
+                rgba(96, 165, 250, 0.6) 50%,
+                rgba(59, 130, 246, 0.3) 80%,
+                transparent 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(59, 130, 246, 0.4), 
+                rgba(96, 165, 250, 0.6),
+                rgba(59, 130, 246, 0.4), 
+                transparent);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease-out;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            filter: brightness(1.2) drop-shadow(0 0 30px rgba(96, 165, 250, 0.5)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.3));
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .headline {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: #ffffff;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.8);
+            letter-spacing: -0.5px;
+        }
+
+        .headline span {
+            background: linear-gradient(135deg, 
+                #60a5fa 0%, 
+                #3b82f6 30%, 
+                #2563eb 60%, 
+                #1d4ed8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+            text-shadow: none;
+            filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
+        }
+
+        .headline-sub {
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.3));
+        }
+
+        /* VSL Section */
+        .vsl-section {
+            background: 
+                linear-gradient(180deg, rgba(10, 10, 20, 0.98) 0%, rgba(5, 5, 15, 0.95) 100%);
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .vsl-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+        }
+
+        .vsl-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 20, 0.9) 0%, rgba(5, 5, 15, 0.95) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.1),
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .vsl-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, 
+                rgba(96, 165, 250, 0.4) 0%, 
+                rgba(59, 130, 246, 0.2) 50%, 
+                rgba(96, 165, 250, 0.4) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .vsl-container:hover::before {
+            opacity: 1;
+        }
+
+        .vsl-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 0 60px rgba(96, 165, 250, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .vsl-container:hover .play-button {
+            transform: scale(1.15);
+            box-shadow: 
+                0 0 0 20px rgba(96, 165, 250, 0.1),
+                0 0 0 40px rgba(96, 165, 250, 0.05),
+                0 20px 40px rgba(96, 165, 250, 0.3);
+        }
+
+        .vsl-placeholder {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .play-button {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 0 0 0 rgba(96, 165, 250, 0.4),
+                0 10px 30px rgba(96, 165, 250, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: pulse-play 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-play {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 0 0 rgba(96, 165, 250, 0.4),
+                    0 10px 30px rgba(96, 165, 250, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 0 15px rgba(96, 165, 250, 0.1),
+                    0 10px 30px rgba(96, 165, 250, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 26px solid #fff;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 6px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 30px 20px 40px;
+            background: linear-gradient(180deg, rgba(5, 5, 15, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 14px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.3),
+                0 8px 30px rgba(96, 165, 250, 0.4),
+                0 15px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.4) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                rgba(255, 255, 255, 0.4) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.5),
+                0 15px 50px rgba(96, 165, 250, 0.5),
+                0 25px 80px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+
+        .cta-subtext {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 50px 20px;
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 20, 0.95) 100%);
+            position: relative;
+        }
+
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+        }
+
+        .story-content {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .story-headline {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .story-text {
+            font-size: 15px;
+            color: #b8b8b8;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .story-text strong {
+            color: #e5e5e5;
+            font-weight: 600;
+        }
+
+        .scroll-stopper-small {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 900;
+            margin: 40px 0 30px;
+            text-align: center;
+            position: relative;
+            padding: 20px 30px;
+            background: 
+                linear-gradient(135deg, rgba(96, 165, 250, 0.08) 0%, rgba(59, 130, 246, 0.12) 100%),
+                linear-gradient(180deg, rgba(10, 10, 20, 0.6) 0%, rgba(5, 5, 15, 0.8) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 12px;
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05),
+                0 0 40px rgba(96, 165, 250, 0.1);
+        }
+
+        .scroll-stopper-small::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(96, 165, 250, 0.6) 20%,
+                rgba(59, 130, 246, 0.8) 50%,
+                rgba(96, 165, 250, 0.6) 80%,
+                transparent 100%);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+
+        .scroll-stopper-small::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(96, 165, 250, 0.6) 20%,
+                rgba(59, 130, 246, 0.8) 50%,
+                rgba(96, 165, 250, 0.6) 80%,
+                transparent 100%);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+
+        .scroll-stopper-small span {
+            background: linear-gradient(135deg, 
+                #60a5fa 0%, 
+                #3b82f6 30%, 
+                #2563eb 60%, 
+                #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.5));
+            display: inline-block;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .month-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 15px;
+            margin-right: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .month-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .month-badge:hover::before {
+            left: 100%;
+        }
+
+        .month-badge:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .month-2 {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(16, 185, 129, 0.2) 0%, 
+                    rgba(5, 150, 105, 0.25) 100%),
+                linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, transparent 100%);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            box-shadow: 
+                0 0 0 1px rgba(52, 211, 153, 0.2),
+                0 4px 20px rgba(16, 185, 129, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(16, 185, 129, 0.15);
+        }
+
+        .month-2:hover {
+            border-color: rgba(52, 211, 153, 0.6);
+            box-shadow: 
+                0 0 0 1px rgba(52, 211, 153, 0.4),
+                0 8px 30px rgba(16, 185, 129, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 0 60px rgba(16, 185, 129, 0.25);
+        }
+
+        .month-6 {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(59, 130, 246, 0.2) 0%, 
+                    rgba(37, 99, 235, 0.25) 100%),
+                linear-gradient(180deg, rgba(96, 165, 250, 0.1) 0%, transparent 100%);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.2),
+                0 4px 20px rgba(59, 130, 246, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .month-6:hover {
+            border-color: rgba(96, 165, 250, 0.6);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.4),
+                0 8px 30px rgba(59, 130, 246, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 0 60px rgba(59, 130, 246, 0.25);
+        }
+
+        .month-12 {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(249, 115, 22, 0.2) 0%, 
+                    rgba(234, 88, 12, 0.25) 100%),
+                linear-gradient(180deg, rgba(251, 146, 60, 0.1) 0%, transparent 100%);
+            color: #fb923c;
+            border: 1px solid rgba(251, 146, 60, 0.4);
+            box-shadow: 
+                0 0 0 1px rgba(251, 146, 60, 0.2),
+                0 4px 20px rgba(249, 115, 22, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(249, 115, 22, 0.15);
+        }
+
+        .month-12:hover {
+            border-color: rgba(251, 146, 60, 0.6);
+            box-shadow: 
+                0 0 0 1px rgba(251, 146, 60, 0.4),
+                0 8px 30px rgba(249, 115, 22, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 0 60px rgba(249, 115, 22, 0.25);
+        }
+
+        .callout-box {
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 20, 0.95) 0%, rgba(5, 5, 15, 0.98) 100%),
+                radial-gradient(ellipse at top left, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%) 1;
+            padding: 32px 40px;
+            margin: 50px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 
+                -4px 0 0 rgba(96, 165, 250, 0.3),
+                0 10px 40px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .callout-box::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+
+        .callout-box p {
+            font-size: 19px;
+            color: #e5e5e5;
+            line-height: 1.8;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Reality Check Section */
+        .reality-section {
+            padding: 50px 20px;
+            background: 
+                linear-gradient(180deg, rgba(10, 10, 20, 0.95) 0%, rgba(5, 5, 15, 0.98) 100%);
+            position: relative;
+        }
+
+        .reality-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+        }
+
+        .reality-content {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .reality-headline {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-align: center;
+            color: #fff;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .bullet-list li {
+            font-size: 15px;
+            color: #b8b8b8;
+            margin-bottom: 16px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.7;
+            transition: transform 0.2s ease;
+        }
+
+        .bullet-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .bullet-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .bullet-list li strong {
+            color: #e5e5e5;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 50px 20px;
+            background: 
+                linear-gradient(180deg, rgba(5, 5, 15, 0.98) 0%, rgba(0, 0, 0, 0.98) 100%);
+            position: relative;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .scroll-stopper {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, 
+                #60a5fa 0%, 
+                #3b82f6 25%,
+                #2563eb 50%,
+                #3b82f6 75%,
+                #60a5fa 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease infinite;
+            filter: drop-shadow(0 0 40px rgba(96, 165, 250, 0.4));
+            letter-spacing: -1px;
+        }
+
+        .testimonials-subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 20, 0.9) 0%, rgba(5, 5, 15, 0.95) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.1),
+                0 10px 40px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(96, 165, 250, 0.6) 50%, 
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, 
+                rgba(96, 165, 250, 0.4) 0%, 
+                rgba(59, 130, 246, 0.2) 50%, 
+                rgba(96, 165, 250, 0.4) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
+        }
+
+        .testimonial-card:hover::after {
+            opacity: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 
+                0 0 0 1px rgba(96, 165, 250, 0.3),
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(96, 165, 250, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-placeholder {
+            font-size: 17px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 60px 20px;
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 20, 0.95) 50%, rgba(0, 0, 0, 1) 100%),
+                radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(59, 130, 246, 0.4) 20%,
+                rgba(96, 165, 250, 0.6) 50%,
+                rgba(59, 130, 246, 0.4) 80%,
+                transparent 100%);
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+        }
+
+        .final-cta-headline {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .final-cta-text {
+            font-size: 15px;
+            color: #999;
+            margin-bottom: 20px;
+            max-width: 325px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 25px 20px;
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(5, 5, 10, 1) 100%);
+            text-align: center;
+            border-top: 1px solid rgba(96, 165, 250, 0.1);
+            box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 34px;
+            }
+
+            .headline-sub {
+                font-size: 22px;
+            }
+
+            .story-headline,
+            .reality-headline,
+            .final-cta-headline {
+                font-size: 30px;
+            }
+
+            .scroll-stopper {
+                font-size: 36px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vsl-placeholder {
+                font-size: 32px;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .play-button::after {
+                border-left: 18px solid #fff;
+                border-top: 11px solid transparent;
+                border-bottom: 11px solid transparent;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 17px;
+            }
+
+            .scroll-stopper-small::before,
+            .scroll-stopper-small::after {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="logo-container">
+                <img src="/mnt/user-data/uploads/1770951807641_image.png" alt="Noah SMMA Logo">
+            </div>
+            
+            <p class="eyebrow">For beginners trying to escape their 9-5, discover...</p>
+            
+            <h1 class="headline">
+                How I Went From <span>Broke College Student</span><br>
+                to $80K/Month in 12 Months
+            </h1>
+            
+            <p class="headline-sub">
+                Plus How I've Helped 75+ Students Do The Same
+            </p>
+        </div>
+    </section>
+
+    <!-- VSL Section -->
+    <section class="vsl-section">
+        <div class="container">
+            <div class="vsl-container" onclick="alert('Video player would launch here')">
+                <div class="vsl-placeholder">VSL</div>
+                <div class="play-button"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <a href="#booking" class="cta-button">Book Your Free Strategy Call</a>
+            <p class="cta-subtext">We'll build you a custom roadmap. Zero pressure, just clarity.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content reveal">
+                <p class="section-label">My Story</p>
+                
+                <h2 class="story-headline">12 Months Ago, I Was You</h2>
+                
+                <p class="story-text">
+                    Zero dollars. Zero skills. Zero clue. But I was sick of being broke. So I made a decision: pick ONE thing and stick with it until it worked.
+                </p>
+
+                <div class="scroll-stopper-small"><span>This Is Where My Life Changed</span></div>
+
+                <p class="story-text">
+                    Month 1. Absolute 0 dollars. I felt all my efforts literally got washed through the ocean, but I kept going.
+                </p>
+
+                <p class="story-text">
+                    <span class="month-badge month-2">Month 2</span> First client. $300 upfront. I was shaking when I sent the invoice.
+                </p>
+
+                <p class="story-text">
+                    <span class="month-badge month-6">Month 6</span> Hit $10K for the first time. Screenshotted my Stripe dashboard at 11 PM and just stared at it.
+                </p>
+
+                <p class="story-text">
+                    <span class="month-badge month-12">Month 12</span> $80K. And I'm not even that special. I just didn't quit when it got hard.
+                </p>
+
+                <div class="callout-box">
+                <p class="story-text">
+                    Real success doesn't come when everything clicks. It comes when the work gets boring, results aren't showing, and every ounce of effort feels wasted but you keep going anyway.
+                </p>
+                </div>
+
+                <p class="story-text">
+                    Now I've helped 75+ people do the same. Not because I'm some guru. But because I know exactly where you're stuck. <strong>I was stuck there too.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reality Check Section -->
+    <section class="reality-section">
+        <div class="container">
+            <div class="reality-content reveal">
+                <div class="scroll-stopper-small">The System That Actually Works</div>
+                
+                <h2 class="reality-headline">Here's What Nobody Tells You</h2>
+                
+                <p class="story-text" style="text-align: center; max-width: 650px; margin: 0 auto 50px;">
+                    Stop chasing tactics. The "secret" is ruthless execution on proven fundamentals. Here's the framework that took me from $0 to $80K/month:
+                </p>
+
+                <ul class="bullet-list">
+                    <li><strong>Volume kills perfection.</strong> Your first 100 calls will suck. Make them anyway. Data beats theory every time.</li>
+                    
+                    <li><strong>Track everything or stay broke.</strong> What gets measured gets improved. No tracking = no progress = no money. If you are not tracking, you are slacking.</li>
+                    
+                    <li><strong>Copy what works, optimize later.</strong> The Facebook Ad Library is free. Stop reinventing the wheel.</li>
+                    
+                    <li><strong>Most people fail working on the wrong stuff.</strong> Building pitch decks and websites while avoiding the one thing that matters: conversations.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header reveal">
+                <h2 class="scroll-stopper">Student Wins</h2>
+                <p class="testimonials-subtitle">Real people. Real results. No fake screenshots.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-placeholder">Testimonial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="booking">
+        <div class="container">
+            <h2 class="final-cta-headline">
+                So What's It Gonna Be?
+            </h2>
+            
+            <p class="final-cta-text">
+                You can keep watching videos and "learning" for the next 6 months. Or book a call, get a custom roadmap, and actually start making money in the next 2-3 weeks.
+            </p>
+            
+            <p class="final-cta-text" style="margin-bottom: 50px;">
+                Your call. Literally.
+            </p>
+            
+            <a href="#" class="cta-button">Book Your Free Strategy Call</a>
+            
+            <p class="cta-subtext">15 minutes. We'll see if it even makes sense to work together.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2026 Noah SMMA. Not affiliated with Facebook, Google, or any "get rich quick" scheme.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on load
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
